@@ -2,9 +2,11 @@ import React from "react";
 import { View, Button, AsyncStorage } from "react-native";
 import { withNavigation } from "react-navigation";
 
+import i18n from "../translations";
+
 class DefaultScreen extends React.Component {
   static navigationOptions = {
-    title: "Please sign in"
+    title: i18n.t("foo")
   };
 
   render() {
