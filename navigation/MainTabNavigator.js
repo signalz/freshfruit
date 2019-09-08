@@ -5,10 +5,13 @@ import {
   createBottomTabNavigator
 } from "react-navigation";
 
-import TabBarIcon from "../components/TabBarIcon";
+import Icon from "../components/Icon";
+// import TabBarIcon from "../components/TabBarIcon";
+import CartScreen from "../screens/CartScreen";
+import ContactScreen from "../screens/ContactScreen";
 import HomeScreen from "../screens/HomeScreen";
-import LinksScreen from "../screens/LinksScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import i18n from "../translations";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -23,63 +26,76 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: "Home",
+  tabBarLabel: i18n.t("MainTabNavigator/Home"),
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
+    <Icon
       focused={focused}
-      name={
-        Platform.OS === "ios"
-          ? `ios-information-circle${focused ? "" : "-outline"}`
-          : "md-information-circle"
-      }
+      name={Platform.OS === "ios" ? "ios-home" : "md-home"}
     />
   )
 };
 
 HomeStack.path = "";
 
-const LinksStack = createStackNavigator(
+const ProfileStack = createStackNavigator(
   {
-    Links: LinksScreen
+    Profile: ProfileScreen
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: "Links",
+ProfileStack.navigationOptions = {
+  tabBarLabel: i18n.t("MainTabNavigator/Profile"),
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === "ios" ? "ios-link" : "md-link"}
-    />
+    <Icon focused={focused} name="profile" type="AntDesign" />
   )
 };
 
-LinksStack.path = "";
+ProfileStack.path = "";
 
-const SettingsStack = createStackNavigator(
+const CartStack = createStackNavigator(
   {
-    Settings: SettingsScreen
+    Cart: CartScreen
   },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: "Settings",
+CartStack.navigationOptions = {
+  tabBarLabel: i18n.t("MainTabNavigator/ShoppingCart"),
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
+    <Icon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-options" : "md-options"}
+      name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
     />
   )
 };
 
-SettingsStack.path = "";
+CartStack.path = "";
+
+const ContactStack = createStackNavigator(
+  {
+    Contact: ContactScreen
+  },
+  config
+);
+
+ContactStack.navigationOptions = {
+  tabBarLabel: i18n.t("MainTabNavigator/Contact"),
+  tabBarIcon: ({ focused }) => (
+    <Icon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-call" : "md-call"}
+    />
+  )
+};
+
+ContactStack.path = "";
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack
+  ProfileStack,
+  CartStack,
+  ContactStack
 });
 
 tabNavigator.path = "";

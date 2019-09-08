@@ -1,3 +1,7 @@
 {
-  "foo": "foo vi"
+  "foo": "foo vi",
+  "MainTabNavigator/Home": "Trang chủ",
+  "MainTabNavigator/Profile": "Cá nhân",
+  "MainTabNavigator/ShoppingCart": "Giỏ hàng",
+  "MainTabNavigator/Contact": "Liên hệ"
 }

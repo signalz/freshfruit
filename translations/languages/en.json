@@ -1,3 +1,7 @@
 {
-  "foo": "foo en"
+  "foo": "foo en",
+  "MainTabNavigator/Home": "Home",
+  "MainTabNavigator/Profile": "Profile",
+  "MainTabNavigator/ShoppingCart": "Cart",
+  "MainTabNavigator/Contact": "Contact"
 }
