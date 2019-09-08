@@ -7,8 +7,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  AsyncStorage
+  View
 } from "react-native";
 
 import { MonoText } from "../components/StyledText";
@@ -21,14 +20,6 @@ export default function HomeScreen() {
         contentContainerStyle={styles.contentContainer}
       >
         <View style={styles.welcomeContainer}>
-          <TouchableOpacity
-            onPress={async () => {
-              await AsyncStorage.removeItem("userToken");
-              this.props.navigation.navigate("Auth");
-            }}
-          >
-            <Text>Sign out</Text>
-          </TouchableOpacity>
           <Image
             source={
               __DEV__
