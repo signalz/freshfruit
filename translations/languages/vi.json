@@ -3,5 +3,13 @@
   "MainTabNavigator/Home": "Trang chủ",
   "MainTabNavigator/Profile": "Cá nhân",
   "MainTabNavigator/ShoppingCart": "Giỏ hàng",
-  "MainTabNavigator/Contact": "Liên hệ"
+  "MainTabNavigator/Contact": "Liên hệ",
+  "HomeScreen/CategoryCard/Flower": "Hoa",
+  "HomeScreen/CategoryCard/Price": "Giá tốt",
+  "HomeScreen/CategoryCard/New": "Mới về",
+  "HomeScreen/CategoryCard/Fruit": "Trái cây",
+  "HomeScreen/CategoryCard/Combo": "Combo",
+  "HomeScreen/CategoryCard/Share": "Mua chung",
+  "HomeScreen/CategoryCard/DryFruit": "Đồ sấy",
+  "HomeScreen/CategoryCard/Gift": "Quà tặng"
 }

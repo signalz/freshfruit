@@ -10,7 +10,9 @@ import {
   View
 } from "react-native";
 
+import CategoryCard from "../components/CategoryCard";
 import { MonoText } from "../components/StyledText";
+import i18n from "../translations";
 
 export default function HomeScreen() {
   return (
@@ -19,55 +21,47 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require("../assets/images/robot-dev.png")
-                : require("../assets/images/robot-prod.png")
-            }
-            style={styles.welcomeImage}
+        <MonoText>1245</MonoText>
+        <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
+          <CategoryCard
+            icon={Platform.OS === "ios" ? "ios-flower" : "md-flower"}
+            value={i18n.t("HomeScreen/CategoryCard/Flower")}
+          />
+          <CategoryCard
+            icon={Platform.OS === "ios" ? "ios-pricetag" : "md-pricetag"}
+            value={i18n.t("HomeScreen/CategoryCard/Price")}
+          />
+          <CategoryCard
+            icon="new"
+            type="Entypo"
+            value={i18n.t("HomeScreen/CategoryCard/New")}
+          />
+          <CategoryCard
+            icon="food-apple"
+            type="MaterialCommunityIcons"
+            value={i18n.t("HomeScreen/CategoryCard/Fruit")}
+          />
+          <CategoryCard
+            icon="heart-multiple"
+            type="MaterialCommunityIcons"
+            value={i18n.t("HomeScreen/CategoryCard/Combo")}
+          />
+          <CategoryCard
+            icon="account-multiple"
+            type="MaterialCommunityIcons"
+            value={i18n.t("HomeScreen/CategoryCard/Share")}
+          />
+          <CategoryCard
+            icon="cookie"
+            type="FontAwesome5"
+            value={i18n.t("HomeScreen/CategoryCard/DryFruit")}
+          />
+          <CategoryCard
+            icon={Platform.OS === "ios" ? "ios-gift" : "md-gift"}
+            value={i18n.t("HomeScreen/CategoryCard/Gift")}
           />
         </View>
-
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          >
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
-          </Text>
-        </View>
-
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
-            </Text>
-          </TouchableOpacity>
-        </View>
       </ScrollView>
-
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
-        </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}
-        >
-          <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
-          </MonoText>
-        </View>
-      </View>
     </View>
   );
 }
@@ -75,41 +69,6 @@ export default function HomeScreen() {
 HomeScreen.navigationOptions = {
   header: null
 };
-
-function DevelopmentModeNotice() {
-  if (__DEV__) {
-    const learnMoreButton = (
-      <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
-      </Text>
-    );
-
-    return (
-      <Text style={styles.developmentModeText}>
-        Development mode is enabled: your app will be slower but you can use
-        useful development tools. {learnMoreButton}
-      </Text>
-    );
-  } else {
-    return (
-      <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
-      </Text>
-    );
-  }
-}
-
-function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync(
-    "https://docs.expo.io/versions/latest/workflow/development-mode/"
-  );
-}
-
-function handleHelpPress() {
-  WebBrowser.openBrowserAsync(
-    "https://docs.expo.io/versions/latest/workflow/up-and-running/#cant-see-your-changes"
-  );
-}
 
 const styles = StyleSheet.create({
   container: {

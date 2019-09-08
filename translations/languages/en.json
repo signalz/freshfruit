@@ -3,5 +3,13 @@
   "MainTabNavigator/Home": "Home",
   "MainTabNavigator/Profile": "Profile",
   "MainTabNavigator/ShoppingCart": "Cart",
-  "MainTabNavigator/Contact": "Contact"
+  "MainTabNavigator/Contact": "Contact",
+  "HomeScreen/CategoryCard/Flower": "Flower",
+  "HomeScreen/CategoryCard/Price": "Sale",
+  "HomeScreen/CategoryCard/New": "New",
+  "HomeScreen/CategoryCard/Fruit": "Fruit",
+  "HomeScreen/CategoryCard/Combo": "Combo",
+  "HomeScreen/CategoryCard/Share": "Group buy",
+  "HomeScreen/CategoryCard/DryFruit": "Dry",
+  "HomeScreen/CategoryCard/Gift": "Gift"
 }
