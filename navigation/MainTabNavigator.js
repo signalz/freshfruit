@@ -91,12 +91,19 @@ ContactStack.navigationOptions = {
 
 ContactStack.path = "";
 
-const tabNavigator = createBottomTabNavigator({
-  HomeStack,
-  ProfileStack,
-  CartStack,
-  ContactStack
-});
+const tabNavigator = createBottomTabNavigator(
+  {
+    HomeStack,
+    ProfileStack,
+    CartStack,
+    ContactStack
+  },
+  {
+    tabBarOptions: {
+      keyboardHidesTabBar: true
+    }
+  }
+);
 
 tabNavigator.path = "";
 

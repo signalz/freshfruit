@@ -1,14 +1,16 @@
-import * as WebBrowser from "expo-web-browser";
+// import * as WebBrowser from "expo-web-browser";
 import React from "react";
 import {
-  Image,
+  // Image,
   Platform,
   ScrollView,
   StyleSheet,
-  Text,
-  TouchableOpacity,
+  // Text,
+  // TouchableOpacity,
+  KeyboardAvoidingView,
   View
 } from "react-native";
+import { Header, Item, Input, Icon, Button, Text } from "native-base";
 
 import CategoryCard from "../components/CategoryCard";
 import { MonoText } from "../components/StyledText";
@@ -21,8 +23,24 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <MonoText>1245</MonoText>
-        <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
+        <Input
+          placeholder={i18n.t("Search")}
+          style={{
+            borderStyle: "solid",
+            borderColor: "grey",
+            borderWidth: 1,
+            borderRadius: 3,
+            marginHorizontal: 10
+          }}
+        />
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-between"
+          }}
+        >
           <CategoryCard
             icon={Platform.OS === "ios" ? "ios-flower" : "md-flower"}
             value={i18n.t("HomeScreen/CategoryCard/Flower")}
